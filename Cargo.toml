@@ -1,0 +1,12 @@
+[package]
+name = "hello_rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jiahao Xiang"]
+
+
+[dependencies]
+
+[[bin]]
+name = "hello_rust"
+path = "main.rs"
