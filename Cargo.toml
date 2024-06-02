@@ -6,6 +6,7 @@ authors = ["Jiahao Xiang"]
 
 
 [dependencies]
+rand = "0.8.5"
 
 [[bin]]
 name = "hello_rust"
