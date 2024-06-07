@@ -1,7 +1,10 @@
 fn main() {
-    let mut s = String::from("hello");
+    let mut ss: Vec<String> = Vec::new();
+    ss.push("hello".to_string());
 
-    s.push_str(", world!"); // push_str() appends a literal to a String
+    println!("{}", ss); // This will print `hello, world!`
+}
 
-    println!("{}", s); // This will print `hello, world!`
+fn one_list(ss: &Vec<String>) -> String {
+    ss[0]
 }
