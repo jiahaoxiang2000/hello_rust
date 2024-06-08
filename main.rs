@@ -1,10 +1,12 @@
+use std::ptr::eq;
+
 fn main() {
-    let mut ss: Vec<String> = Vec::new();
-    ss.push("hello".to_string());
-
-    println!("{}", ss); // This will print `hello, world!`
-}
-
-fn one_list(ss: &Vec<String>) -> String {
-    ss[0]
+    // deep clone
+    let a = "Hello".to_string();
+    let b = &a;
+    println!("a = {}, b = {}, a==b {}", &a, &b, eq(&a, b));
+    // copy clone
+    let a = 1;
+    let b = a;
+    println!("a = {}, b = {}, a==b {}", &a, &b, eq(&a, &b));
 }
