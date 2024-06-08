@@ -1,12 +1,14 @@
-use std::ptr::eq;
 
 fn main() {
-    // deep clone
-    let a = "Hello".to_string();
-    let b = &a;
-    println!("a = {}, b = {}, a==b {}", &a, &b, eq(&a, b));
-    // copy clone
-    let a = 1;
-    let b = a;
-    println!("a = {}, b = {}, a==b {}", &a, &b, eq(&a, &b));
+    // reference
+    let mut s = String::from("hello");
+    let  b1 =  &mut s;
+    println!("b1: {}", b1);
+    
+    let  b2 =  &s;
+    let  b3 =  &s;
+    println!("b2 : {}", b2);
+    println!("b3 : {}", b3);
+
+    s.push(char::from(33));
 }
