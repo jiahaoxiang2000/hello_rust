@@ -10,4 +10,4 @@ rand = "0.8.5"
 
 [[bin]]
 name = "hello_rust"
-path = "main.rs"
+
