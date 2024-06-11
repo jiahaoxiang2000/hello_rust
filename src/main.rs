@@ -1,6 +1,7 @@
 pub mod garden;
+use garden::vegetables::Asparagus;
 
 fn main() {
-    let a = garden::vegetables::Asparagus {};
+    let a = Asparagus {};
     println!("{:?}", a)
 }
