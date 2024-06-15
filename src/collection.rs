@@ -26,5 +26,5 @@ fn string_basic() {
     let c = format!("{s}-{b}");
     assert_eq!(c, "initial contents-initial contents");
 
-    
+    // the String cant be indexed, by the UTF-8 encoding. the char not stored in 1 byte, is encoding the 1 or 2 bytes.
 }
