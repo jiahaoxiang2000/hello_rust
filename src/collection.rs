@@ -28,3 +28,22 @@ fn string_basic() {
 
     // the String cant be indexed, by the UTF-8 encoding. the char not stored in 1 byte, is encoding the 1 or 2 bytes.
 }
+
+#[test]
+fn hash_map() {
+    use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+    assert_eq!(scores.get("Blue"), Some(&10));
+    assert_eq!(scores.get("Red"), None);
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Blue"), 25);
+    assert_eq!(scores.get("Blue"), Some(&25));
+
+    scores.entry(String::from("Yellow")).or_insert(50);
+    scores.entry(String::from("Blue")).or_insert(50);
+    assert_eq!(scores.get("Yellow"), Some(&50));
+
+}
