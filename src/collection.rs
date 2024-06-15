@@ -1,4 +1,3 @@
-
 #[test]
 fn test_add() {
     assert_eq!(4, 4);
@@ -15,4 +14,17 @@ fn vector_basic() {
         *i += 50;
     }
     assert_eq!(v, [150, 82, 107]);
+}
+
+#[test]
+fn string_basic() {
+    let data = "initial contents";
+    let s = data.to_string();
+    let b = "initial contents".to_string();
+    assert_eq!(s, b);
+
+    let c = format!("{s}-{b}");
+    assert_eq!(c, "initial contents-initial contents");
+
+    
 }
