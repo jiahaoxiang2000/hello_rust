@@ -22,3 +22,28 @@ fn generic_for_one_type() {
     let result = largest(&number_list);
     assert!(*result == 6000);
 }
+
+struct Point<X1, Y1> {
+    x: X1,
+    y: Y1,
+}
+
+impl<X1, Y1> Point<X1, Y1> {
+    fn mixup<X2, Y2>(self, other: Point<X2, Y2>) -> Point<X1, Y2> {
+        Point {
+            x: self.x,
+            y: other.y,
+        }
+    }
+}
+
+#[test]
+fn multi_generic_type() {
+    let p1 = Point { x: 5, y: 10.4 };
+    let p2 = Point { x: "Hello", y: 'c' };
+
+    let p3 = p1.mixup(p2);
+
+    assert_eq!(p3.x, 5);
+    assert_eq!(p3.y, 'c');
+}
