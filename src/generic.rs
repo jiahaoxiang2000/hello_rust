@@ -82,15 +82,34 @@ impl Summary for Tweet {
 fn trait_example() {
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
-        content: String::from(
-            "of course, as you probably already know, people",
-        ),
+        content: String::from("of course, as you probably already know, people"),
         reply: false,
         retweet: false,
     };
-    
+
     assert_eq!(
         tweet.summarize(),
         "horse_ebooks: of course, as you probably already know, people"
     );
+}
+
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+#[test]
+fn lifetime_example() {
+    // the lifetime should be meeting the condition of the function
+    let string1 = String::from("long string is long");
+    let string2 = String::from("xyz");
+    let result;
+    {
+        result = longest(string1.as_str(), string2.as_str());
+    }
+    assert_eq!(result, "long string is long");
+    
 }
