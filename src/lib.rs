@@ -25,6 +25,21 @@ pub struct Config {
 }
 
 impl Config {
+    /// Create a new Config instance
+    ///
+    /// # Examples
+    /// ```
+    /// use hello_rust::Config;
+    /// 
+    /// let args = vec!["".to_string(), "duct".to_string(), "poem.txt".to_string()];
+    /// let config = Config::build(&args).unwrap();
+    /// assert_eq!(config.query, "duct");
+    /// assert_eq!(config.file_path, "poem.txt");
+    /// ```
+    ///
+    /// # Errors
+    ///
+    /// This function will return an error if .
     pub fn build(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
             return Err("Not enough arguments");
