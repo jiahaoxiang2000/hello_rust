@@ -1,23 +1,34 @@
+//! # hello_rust
+//!
+//! `hello_rust` is a learn project. follower the book [The Rust Programming Language](https://doc.rust-lang.org/book/).
+//!
+
+pub use self::tools::run;
+
 use std::{env, error::Error, fs};
+pub mod tools {
+    use super::*;
+    pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
+        let contents = fs::read_to_string(config.file_path)?;
 
-pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let contents = fs::read_to_string(config.file_path)?;
+        let results = if config.ignore_case {
+            println!("Ignoring case");
+            search_case_insensitive(&config.query, &contents)
+        } else {
+            println!("Case sensitive");
+            search(&config.query, &contents)
+        };
 
-    let results = if config.ignore_case {
-        println!("Ignoring case");
-        search_case_insensitive(&config.query, &contents)
-    } else {
-        println!("Case sensitive");
-        search(&config.query, &contents)
-    };
+        for line in results {
+            println!("{line}");
+        }
 
-    for line in results {
-        println!("{line}");
+        Ok(())
     }
-
-    Ok(())
 }
 
+/// Config struct
+///
 pub struct Config {
     pub query: String,
     pub file_path: String,
@@ -30,7 +41,7 @@ impl Config {
     /// # Examples
     /// ```
     /// use hello_rust::Config;
-    /// 
+    ///
     /// let args = vec!["".to_string(), "duct".to_string(), "poem.txt".to_string()];
     /// let config = Config::build(&args).unwrap();
     /// assert_eq!(config.query, "duct");
@@ -39,7 +50,7 @@ impl Config {
     ///
     /// # Errors
     ///
-    /// This function will return an error if .
+    /// This function will return an error if.
     pub fn build(args: &[String]) -> Result<Config, &str> {
         if args.len() < 3 {
             return Err("Not enough arguments");
