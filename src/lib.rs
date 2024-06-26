@@ -40,7 +40,7 @@ impl Config {
     ///
     /// # Examples
     /// ```
-    /// use hello_rust::Config;
+    /// use hello_rust_xjh::Config;
     ///
     /// let args = vec!["".to_string(), "duct".to_string(), "poem.txt".to_string()];
     /// let config = Config::build(&args).unwrap();

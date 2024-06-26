@@ -1,6 +1,6 @@
 use std::{env, process};
 
-use hello_rust::{run, Config};
+use hello_rust_xjh::{run, Config};
 
 fn main() {
     let args: Vec<String> = env::args().collect();
