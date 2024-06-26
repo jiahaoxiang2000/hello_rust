@@ -18,4 +18,14 @@ fn main() {
     }
 }
 
+#[cfg(test)]
+mod test {
 
+    #[test]
+    fn iter() {
+        let v1: Vec<i32> = vec![1, 2, 3];
+
+        let a = v1.iter().map(|x| x + 1).filter(|x| x > &1).map(|x| x + 1).collect::<Vec<i32>>();
+        println!("{:?}", a);
+    }
+}
