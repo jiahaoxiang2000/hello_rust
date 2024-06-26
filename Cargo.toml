@@ -5,13 +5,11 @@ version = "0.1.0"
 license = "MIT"
 edition = "2021"
 authors = ["Jiahao Xiang"]
-github = "https://github.com/jiahaoxiang2000/hello_rust"
+git = "https://github.com/jiahaoxiang2000/hello_rust"
 
 [profile.dev]
 opt-level = 1
 
 [dependencies]
 rand = "0.8.5"
-
-
 
