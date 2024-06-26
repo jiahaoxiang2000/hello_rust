@@ -1,11 +1,14 @@
 [package]
 name = "hello_rust_xjh"
 description = "A simple hello world program in Rust"
-version = "0.1.0"
+version = "0.1.1"
 license = "MIT"
 edition = "2021"
 authors = ["Jiahao Xiang"]
-git = "https://github.com/jiahaoxiang2000/hello_rust"
+documentation = "https://docs.rs/hello_rust_xjh/"
+homepage = "https://github.com/jiahaoxiang2000/hello_rust"
+repository  = "https://github.com/jiahaoxiang2000/hello_rust"
+readme = "readme.md"
 
 [profile.dev]
 opt-level = 1
