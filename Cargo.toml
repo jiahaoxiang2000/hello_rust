@@ -1,5 +1,6 @@
 [package]
 name = "hello_rust_xjh"
+description = "A simple hello world program in Rust"
 version = "0.1.0"
 license = "MIT"
 edition = "2021"
