@@ -3,6 +3,8 @@
 //! `hello_rust` is a learn project. follower the book [The Rust Programming Language](https://doc.rust-lang.org/book/).
 //!
 
+pub mod oop;
+
 pub use self::tools::run;
 
 use std::{env, error::Error, fs};
