@@ -1,7 +1,7 @@
 [package]
 name = "hello_rust_xjh"
 description = "A simple hello world program in Rust"
-version = "0.2.0"
+version = "0.3.0"
 license = "MIT"
 edition = "2021"
 authors = ["Jiahao Xiang <jiahaoxiang2000@gmail.com>"]
